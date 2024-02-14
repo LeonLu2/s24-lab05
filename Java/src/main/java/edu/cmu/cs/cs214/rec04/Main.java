@@ -16,32 +16,37 @@ public class Main {
          * Feel free to write more to test your implementation. 
          * */
 
-        // IntegerList list1;
-        // SortedIntList list2;
+        IntegerList list1;
+        // SortedIntList list1;
+        SortedIntList list2;
 
-        // list1 = new DelegationSortedIntList();
-        // list2 = new InheritanceSortedIntList();
+        list1 = new DelegationSortedIntList();
+        // list1 = new InheritanceSortedIntList();
+        list2 = new InheritanceSortedIntList();
 
-        // // add 5 elements to our first list.
-        // list1.add(1);
-        // list1.add(3);
-        // list1.add(2);
-        // list1.add(4);
-        // list1.add(2);
+        // add 5 elements to our first list.
+        list1.add(1);
+        list1.add(3);
+        list1.add(2);
+        list1.add(4);
+        list1.add(2);
 
-        // printList(list1);
+        printList(list1);
         // System.out.println(list1.getTotalAdded());
+        DelegationSortedIntList list1copy = (DelegationSortedIntList) list1;
+        System.out.println(list1copy.getTotalAdded());
 
-        // // add 2 elements to a second list.
-        // list2.add(3);
-        // list2.add(0);
+        // add 2 elements to a second list.
+        list2.add(3);
+        list2.add(0);
 
+        // add the first list (5 elements) to our second list (2 elements).
+        list2.addAll(list1);
 
-        // // add the first list (5 elements) to our second list (2 elements).
-        // list2.addAll(list1);
-
-        // printList(list2);
+        printList(list2);
         // System.out.println(list2.getTotalAdded());
+        InheritanceSortedIntList list2copy = (InheritanceSortedIntList) list2;
+        System.out.println(list2copy.getTotalAdded());
     }
 
     /**
