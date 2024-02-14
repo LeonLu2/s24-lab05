@@ -38,7 +38,7 @@ public class DelegationSortedIntList implements IntegerList{
 
     // implement removeAll method
     public boolean removeAll(IntegerList list) {
-        return this.list.removeAll(list);
+        return list.removeAll(list);
     }
 
     // getter for totalAdded
