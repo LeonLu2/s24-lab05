@@ -13,32 +13,32 @@ package edu.cmu.cs.cs214.rec04;
 public class DelegationSortedIntList implements IntegerList{
     // Write your implementation below with API documentation
     private int totalAdded;
-    private SortedIntList list;
+    private SortedIntList sortedList;
 
     // constructor
     public DelegationSortedIntList() {
-        list = new SortedIntList();
+        sortedList = new SortedIntList();
         totalAdded = 0;
     }
 
     // implement get method
     public int get(int index) {
-        return list.get(index);
+        return sortedList.get(index);
     }
 
     // implement size method
     public int size() {
-        return list.size();
+        return sortedList.size();
     }
 
     // implement remove method
     public boolean remove(int num) {
-        return list.remove(num);
+        return sortedList.remove(num);
     }
 
     // implement removeAll method
     public boolean removeAll(IntegerList list) {
-        return list.removeAll(list);
+        return sortedList.removeAll(list);
     }
 
     // getter for totalAdded
@@ -48,7 +48,7 @@ public class DelegationSortedIntList implements IntegerList{
 
     // implement add method, increment totalAdded
     public boolean add(int num) {
-        boolean success = list.add(num);
+        boolean success = sortedList.add(num);
         if (success) {
             totalAdded++;
         }
@@ -59,7 +59,7 @@ public class DelegationSortedIntList implements IntegerList{
     public boolean addAll(IntegerList list) {
         boolean success = false;
         for (int i = 0; i < list.size(); i++) {
-            success |= list.add(list.get(i));
+            success |= sortedList.add(list.get(i));
             if (success) {
                 totalAdded++;
             }
